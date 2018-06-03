@@ -49,7 +49,7 @@ public class ArrayList<T>{
 	}
 
 	public void remove(int x) {
-		T[] test = (T[]) new Object[array.length+1];
+		T[] test = (T[]) new Object[array.length-1];
 		for (int i = 0; i < test.length; i++) {
 			if(i>=x) {
 				test[i]=array[i+1];
@@ -57,5 +57,15 @@ public class ArrayList<T>{
 				test[i]=array[i];
 			}
 			}
+		array=test;
 		}
+
+	public boolean contains(T x) {
+		for (int i = 0; i < array.length; i++) {
+			if(array[i]==x) {
+				return true;
+			}
+		}
+		return false;
+	}
 	}
